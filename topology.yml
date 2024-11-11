@@ -1,0 +1,30 @@
+provider: libvirt
+
+groups:
+    hosts:
+      members: [ h1, h2, h3 ]
+      device: linux
+    switches:
+      members: [ s1 ]
+      device: iosvl2
+
+nodes:
+  s1:
+    id: 1
+  h1:
+    id: 10
+  h2:
+    id: 20
+  h3:
+    id: 30
+
+links:
+- s1:
+  h1:
+    pool: lan
+- s1:
+  h2:
+    pool: lan
+- s1:
+  h3:
+    pool: lan
