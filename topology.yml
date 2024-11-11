@@ -1,0 +1,38 @@
+provider: libvirt
+defaults.device: iosvl2
+module: [ vlan ]
+
+nodes:
+  h1:
+  h2:
+  s1:
+  s2:
+  ros:
+    vlan.mode: route
+
+groups:
+  hosts:
+    members: [ h1, h2 ]
+    device: linux
+
+vlans:
+  red:
+    id: 10
+    mode: bridge
+  blue:
+    id: 20
+    mode: bridge
+
+links:
+- ros:
+  s1:
+  vlan.trunk: [ red, blue ]
+- s1:
+  s2:
+  vlan.trunk: [ red, blue ]
+- s2:
+  h1:
+  vlan.access: red
+- s2:
+  h2:
+  vlan.access: blue
