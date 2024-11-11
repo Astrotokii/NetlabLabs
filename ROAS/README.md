@@ -1,1 +1,1 @@
-
+This is a router-on-a-stick lab set up in Netlab. Due to configuration issues, the configuration had to be done in the topology.yml file rather than in CLI. However, switchport mode access needs to be entered on s2 for both host links. Afterwhich, successful pings between h1 to h2 confirm ROAS configuration.
