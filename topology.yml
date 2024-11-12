@@ -1,0 +1,61 @@
+provider: libvirt
+defaults.device: iosvl2
+module: [ vlan ]
+groups:
+  hosts:
+    members: [ h1, h2, h3, h4 ]
+    device: linux
+  switches:
+    members: [ e1, e2, s1, s2 ]
+vlans:
+  red:
+    id: 2
+    mode: irb
+  blue:
+    id: 3
+    mode: irb
+
+nodes:
+  h1:
+    id: 10
+  h2:
+    id: 11
+  h3:
+    id: 12
+  h4:
+    id: 13
+  e1:
+    id: 1
+  e2:
+    id: 2
+  s1:
+    id: 3
+  s2:
+    id: 4
+links:
+- e1:
+  e2:
+  pool: l2only
+  type: p2p
+- e1:
+  e2:
+  pool: l2only
+  type: p2p
+- e1:
+  s1:
+  pool: lan
+- e2:
+  s2:
+  pool: lan
+- s1:
+  h1:
+  vlan.access: red
+- s1:
+  h2:
+  vlan.access: red
+- s2:
+  h3:
+  vlan.access: blue
+- s2:
+  h4:
+  vlan.access: blue
