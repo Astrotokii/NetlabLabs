@@ -4,4 +4,4 @@ For the lab to work, switchport mode access needs to be enabled on host links on
 
 For all hosts, the default gateway needs to be deleted and changed to their corresponding VLAN ip addresses on l3. 
 
-Once this is done, VLAN 10 hosts are able to ping VLAN 20 hosts, confirming VLAN routing via SVI/RoutedIF. 
+Once this is done, VLAN 10 hosts are able to ping VLAN 20 hosts, confirming VLAN routing via SVI. All incoming traffic through r1, destined for hosts in either VLAN, should arrive as well. 
