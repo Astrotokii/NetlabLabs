@@ -4,3 +4,4 @@ This is a multiarea OSPF topology done on Cisco routers. This topology contains:
 - SVIs on all switches
 - irb links between all linux hosts and switches
 - Static DNS for all hosts
+- Routed Interfaces between all switches and their neighboring router
