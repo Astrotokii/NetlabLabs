@@ -1,1 +1,6 @@
-
+This is a multiarea OSPF topology done on Cisco routers. This topology contains:
+- 4 OSPF areas
+- 3 VLANs
+- SVIs on all switches
+- irb links between all linux hosts and switches
+- Static DNS for all hosts
