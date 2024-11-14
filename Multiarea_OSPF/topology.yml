@@ -82,8 +82,8 @@ links:
       area: 0.0.0.1
 - r1_a1_2:
   s2_a2:
-    ospf:
-      area: 0.0.0.2
+  ospf:
+    area: 0.0.0.2
 - r2_a3:
   s3_a3:
     ospf:
